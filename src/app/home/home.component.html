@@ -35,8 +35,7 @@
                   Deals For Parking lots
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  Our goal is to create an application for a parking lot system. As everyone visualizes projects differently, there may be many features that come into your mind.
                 </p>
                 <div>
                   <a href="">
@@ -55,13 +54,14 @@
                   Deals For Parking lots
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  A parking lot should have a parking lot ID, number of floors, and number of slots on each floor.
                 </p>
                 <div>
-                  <a href="">
-                    Contact us
-                  </a>
+                  <button routerLink="/contact">
+                    <a href="">
+                      Contact us
+                    </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@
   </div>
 
   <!-- find section -->
-  <section class="find_section">
+  <section class="find_section mt-5">
     <div class="container">
       <form action="">
         <div class=" form-row">
@@ -88,8 +88,8 @@
             <label for="carPark">Select Car Park</label>
             <select name="" id="carPark" class="form-control">
               <option value="">First Floor</option>
-              <option value="">Option 1</option>
-              <option value="">Option 2</option>
+              <option value="">First 1</option>
+              <option value="">Second 2</option>
             </select>
           </div>
           <div class="col-lg-3">
@@ -103,7 +103,7 @@
           </div>
           <div class="col-lg-3">
             <div class="btn-container">
-              <button type="submit" class="">
+              <button routerLink="/contact" type="submit" class="">
                 Request a call
               </button>
             </div>
@@ -184,9 +184,7 @@
             </div>
 
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in
-              some form, by injected humour, or randomised words which don't look even slightly believable. If you are
+              Now, if the vehicle wants to unpark, it has to show the ticket. The system parses the ticket, finds out which slot the vehicle is parked in and frees up the slot. The unPark() method takes in the ticket and frees up the corresponding slot.
             </p>
             <div>
               <a href="">
@@ -350,9 +348,7 @@
             Car Wash
           </h5>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoLorem ipsum dolor sit amet,
-            consectetur adipiscing eullamco
+            When a vehicle pulls into the parking lot, the application takes the vehicle's type, registration number, and its color. You can also have additional details like the vehicle's name, the driver's name, and so on.
           </p>
           <div>
             <a href="">
@@ -473,9 +469,7 @@
             Concierge Options
           </h5>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoLorem ipsum dolor sit amet,
-            consectetur adipiscing eullamco
+            Each slot in the parking lot has a type of vehicle that can park there. Valid types are car, bike, and truck. You can include any vehicle type as per your needs. You can also decide which slots should go to each type. Here, I am assigning the first slot on each floor to a truck, the next two for bikes, and rest for cars.
           </p>
           <div>
             <a href="">
@@ -572,9 +566,7 @@
             Close And Handy
           </h5>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoLorem ipsum dolor sit amet,
-            consectetur adipiscing eullamco
+            After that, a slot is assigned to the vehicle. The selection strategy could be anything you want. Here, we will choose the lowest floor and earliest available slot.
           </p>
           <div>
             <a href="">
@@ -607,9 +599,8 @@
             Safe And Secure
           </h5>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoLorem ipsum dolor sit amet,
-            consectetur adipiscing eullamco
+            To unpark the vehicle, the user should present the valid ticket. After that, the vehicle is removed from the slot.
+The app should be able to display the number of available slots and a list of available and unavailable slots for a specific vehicle type.
           </p>
           <div>
             <a href="">
@@ -651,10 +642,9 @@
                   laboris nisi
                 </h6>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex
-                  ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                  This is handled by the parkVehicle() method. If a slot is not available, then the method prints an error message.
+
+Now, if the vehicle wants to unpark, it has to show the ticket. The system parses the ticket, finds out which slot the vehicle is parked in and frees up the slot. The unPark() method takes in the ticket and frees up the corresponding slot.
                 </p>
               </div>
             </div>
