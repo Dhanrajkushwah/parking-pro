@@ -1,5 +1,5 @@
-// src/app/parking-form/parking-form.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ParkingService } from '../parking.service';
 import Swal from 'sweetalert2';
 
@@ -8,14 +8,22 @@ import Swal from 'sweetalert2';
   templateUrl: './parking-form.component.html',
   styleUrls: ['./parking-form.component.css'],
 })
-export class ParkingFormComponent {
-  vehicleType: 'car' | 'bike' | 'truck' = 'car';
-  ticket: string = '';
+export class ParkingFormComponent implements OnInit {
+  parkingForm!: FormGroup;
 
   constructor(private parkingService: ParkingService) {}
 
+  ngOnInit(): void {
+    this.parkingForm = new FormGroup({
+      vehicleType: new FormControl('car', Validators.required),
+      ticket: new FormControl('', Validators.required),
+    });
+  }
+
   parkVehicle() {
-    const ticket = this.parkingService.parkVehicle(this.vehicleType);
+    const vehicleType = this.parkingForm.get('vehicleType')?.value;
+    const ticket = this.parkingService.parkVehicle(vehicleType);
+
     if (ticket) {
       // Swal alert for vehicle parked
       Swal.fire({
@@ -24,6 +32,7 @@ export class ParkingFormComponent {
         text: `Vehicle data added successfully. Ticket: ${ticket}`,
         confirmButtonText: 'OK'
       });
+      this.parkingForm.reset();
     } else {
       // Swal alert for no available slot
       Swal.fire({
@@ -34,9 +43,11 @@ export class ParkingFormComponent {
       });
     }
   }
-  
+
   unparkVehicle() {
-    const success = this.parkingService.unparkVehicle(this.ticket);
+    const ticket = this.parkingForm.get('ticket')?.value;
+    const success = this.parkingService.unparkVehicle(ticket);
+
     if (success) {
       // Swal alert for successful unparking
       Swal.fire({
@@ -45,6 +56,7 @@ export class ParkingFormComponent {
         text: 'Vehicle unparked successfully!',
         confirmButtonText: 'OK'
       });
+      this.parkingForm.reset();
     } else {
       // Swal alert for invalid ticket
       Swal.fire({
