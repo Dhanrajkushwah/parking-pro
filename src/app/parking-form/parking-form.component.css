@@ -1,0 +1,27 @@
+/* src/app/parking-form/parking-form.component.css */
+
+.container-fluid.main-div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Additional styles for the modal */
+.modal-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

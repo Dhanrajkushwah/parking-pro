@@ -1,0 +1,15 @@
+<div class="container-fluid p-4">
+    <div *ngFor="let floor of parkingLot.slotsPerFloor; let i = index">
+      <h3>Floor {{ i + 1 }}</h3>
+      <div class="floor">
+        <div
+          class="slot"
+          *ngFor="let slot of floor"
+          [ngClass]="{ occupied: slot.occupied }"
+        >
+          <span>{{ slot.occupied ? slot.ticket : slot.vehicleType }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  

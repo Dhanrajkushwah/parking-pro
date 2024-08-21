@@ -1,0 +1,39 @@
+<!-- src/app/parking-form/parking-form.component.html -->
+<div class="container-fluid main-div mb-3 p-4">
+  <div class="row align-items-center">
+    <div class="col-sm-7 d-flex justify-content-center">
+      <div class="image-container">
+        <img src="https://img.freepik.com/free-vector/driving-school-concept-illustration_114360-11310.jpg?t=st=1724059052~exp=1724062652~hmac=24e3cd2eac0fe07ff2622d40d7f39cdf4bc7640b352bd1ae065f1fa6a1446965&w=996" alt="Parking Management" />
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="card shadow-lg">
+        <div class="card-header">
+          <h3>Parking Management</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <h4>Park a Vehicle</h4>
+            <label for="vehicleType">Vehicle Type:</label>
+            <select id="vehicleType" class="form-control" [(ngModel)]="vehicleType">
+              <option value="car">Car</option>
+              <option value="bike">Bike</option>
+              <option value="truck">Truck</option>
+            </select>
+            <button class="btn btn-primary mt-3" (click)="parkVehicle()">Park Vehicle</button>
+          </div>
+  
+          <hr />
+  
+          <div class="form-group">
+            <h4>Unpark a Vehicle</h4>
+            <label for="ticket">Ticket ID:</label>
+            <input id="ticket" class="form-control" [(ngModel)]="ticket" placeholder="Enter Ticket ID" />
+            <button class="btn btn-danger mt-3" (click)="unparkVehicle()">Unpark Vehicle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-parking-lot></app-parking-lot>
